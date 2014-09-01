@@ -17,24 +17,31 @@
     <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="css\app.css" />
+    <Content Include="css\todos.css" />
     <Content Include="favicon.ico" />
     <Content Include="index.html" />
-    <None Include="scripts\lib\jquery-2.1.1.intellisense.js" />
-    <Content Include="scripts\lib\backbone.js" />
-    <Content Include="scripts\lib\jquery-2.1.1.js" />
-    <Content Include="scripts\lib\json2.js" />
-    <Content Include="scripts\lib\underscore.js" />
+    <Content Include="js\lib\backbone.js" />
+    <Content Include="js\lib\backbone.localStorage.js" />
+    <Content Include="js\lib\underscore.js" />
+    <Content Include="README.md" />
+    <Content Include="packages.config" />
+    <Content Include="js\lib\jquery.js" />
+    <Content Include="js\requireJs\r.js" />
+    <Content Include="js\requireJs\require.js" />
     <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="scripts\app.ts" />
-    <TypeScriptCompile Include="scripts\typings\backbone\backbone.d.ts" />
-    <TypeScriptCompile Include="scripts\typings\jquery\jquery.d.ts" />
-    <TypeScriptCompile Include="scripts\typings\underscore\underscore-typed-1.4.2.d.ts" />
-    <TypeScriptCompile Include="scripts\typings\underscore\underscore-typed-1.4.3.d.ts" />
-    <TypeScriptCompile Include="scripts\typings\underscore\underscore-typed.d.ts" />
-    <TypeScriptCompile Include="scripts\typings\underscore\underscore.d.ts" />
+    <TypeScriptCompile Include="js\app.ts" />
+    <TypeScriptCompile Include="js\AppView.ts" />
+    <TypeScriptCompile Include="js\Todo.ts" />
+    <TypeScriptCompile Include="js\TodoList.ts" />
+    <TypeScriptCompile Include="js\TodoView.ts" />
+    <TypeScriptCompile Include="js\typings\backbone.d.ts" />
+    <TypeScriptCompile Include="js\typings\backbone.localStorage.d.ts" />
+    <TypeScriptCompile Include="js\typings\jquery.d.ts" />
+    <TypeScriptCompile Include="js\typings\require.d.ts" />
+    <TypeScriptCompile Include="js\typings\typings.d.ts" />
+    <TypeScriptCompile Include="js\typings\underscore.d.ts" />
   </ItemGroup>
   <ItemGroup>
     <None Include="web.Debug.config">
@@ -100,6 +107,7 @@
       <HintPath>packages\Microsoft.AspNet.WebPages.WebData.2.0.20710.0\lib\net40\WebMatrix.WebData.dll</HintPath>
     </Reference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
