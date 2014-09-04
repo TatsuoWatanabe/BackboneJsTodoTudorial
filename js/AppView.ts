@@ -5,7 +5,7 @@ import TodoView = require('TodoView');
 class AppView extends Backbone.View<Todo> {
     public $el           = $('#todoapp');
     public input         = this.$('#new-todo');
-    public footer        = this.$('#footer');
+    public footer        = this.$('footer');
     public main          = this.$('#main');
     public allCheckbox   = <HTMLInputElement>this.$('#toggle-all')[0];
     public statsTemplate = _.template($('#stats-template').html());
@@ -29,7 +29,7 @@ class AppView extends Backbone.View<Todo> {
         var done       = this.todos.done().length;
         var remaining  = this.todos.remaining().length;
         var todoExists = this.todos.length !== 0;
-        
+
         this.main.toggle(todoExists);
         this.footer.toggle(todoExists);
         if (todoExists) {
