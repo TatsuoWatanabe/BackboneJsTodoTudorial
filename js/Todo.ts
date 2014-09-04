@@ -1,16 +1,20 @@
-﻿/// <reference path="typings/typings.d.ts" />
-
+﻿
 class Todo extends Backbone.Model {
-    defaults() {
+
+    constructor(attributes?: any, options?: any) {
+        super(attributes, options);
+    }
+
+    public defaults() {
         return {
             title: 'empty todo...',
-            order: 'Todos.nextOrder()',
+            order: 1 /* Todos.nextOrder() */ ,
             done: false
         };
     }
 
     public toggle() {
-        this.save({done: !this.get('done')});
+        this.save({ done: !this.get('done') });
     }
 }
 export = Todo;

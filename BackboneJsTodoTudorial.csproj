@@ -17,6 +17,7 @@
     <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="css\destroy.png" />
     <Content Include="css\todos.css" />
     <Content Include="favicon.ico" />
     <Content Include="index.html" />
