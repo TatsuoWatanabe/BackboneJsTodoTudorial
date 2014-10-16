@@ -7,3 +7,5 @@ http://documentcloud.github.io/backbone/docs/todos.html
 
 An example Backbone application contributed by Jérôme Gravel-Niquet. This demo uses a simple LocalStorage adapter to persist Backbone models within your browser. 
 
+#### gh-pages
+http://tatsuowatanabe.github.io/BackboneJsTodoTudorial/
