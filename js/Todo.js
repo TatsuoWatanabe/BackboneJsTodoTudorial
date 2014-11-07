@@ -11,15 +11,20 @@ define(["require", "exports"], function(require, exports) {
             _super.call(this, attributes, options);
         }
         Todo.prototype.defaults = function () {
-            return {
-                title: 'empty todo...',
-                order: 1 /* Todos.nextOrder() */ ,
-                done: false
-            };
+            return Todo.defaults;
         };
 
         Todo.prototype.toggle = function () {
             this.save({ done: !this.get('done') });
+        };
+
+        Todo.prototype.toJSON = function () {
+            return _super.prototype.toJSON.call(this);
+        };
+        Todo.defaults = {
+            title: 'empty todo...',
+            order: 1 /* Todos.nextOrder() */ ,
+            done: false
         };
         return Todo;
     })(Backbone.Model);

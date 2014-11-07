@@ -16,7 +16,7 @@ define(["require", "exports", 'Todo'], function(require, exports, Todo) {
             return this.where({ done: true });
         };
         TodoList.prototype.remaining = function () {
-            return this.without.apply(this, this.done());
+            return this.where({ done: false });
         };
         TodoList.prototype.nextOrder = function () {
             return this.length ? Number(this.last().get('order')) + 1 : 1;

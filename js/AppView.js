@@ -56,6 +56,14 @@ define(["require", "exports", 'TodoList', 'TodoView'], function(require, exports
             this.todos.each(this.addOne, this);
         };
 
+        AppView.prototype.filterOne = function (todo) {
+            todo.trigger('filter');
+        };
+
+        AppView.prototype.filterAll = function () {
+            this.todos.each(this.filterOne, this);
+        };
+
         AppView.prototype.createOnEnter = function (e) {
             if (e.keyCode !== 13) {
                 return;
@@ -81,6 +89,7 @@ define(["require", "exports", 'TodoList', 'TodoView'], function(require, exports
         };
         return AppView;
     })(Backbone.View);
+
     
     return AppView;
 });

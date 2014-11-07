@@ -4,7 +4,7 @@
     __.prototype = b.prototype;
     d.prototype = new __();
 };
-define(["require", "exports"], function(require, exports) {
+define(["require", "exports", 'app'], function(require, exports, app) {
     var TodoView = (function (_super) {
         __extends(TodoView, _super);
         function TodoView(options) {
@@ -23,11 +23,21 @@ define(["require", "exports"], function(require, exports) {
         TodoView.prototype.initialize = function () {
             this.listenTo(this.model, 'change', this.render);
             this.listenTo(this.model, 'destroy', this.remove);
+            this.listenTo(this.model, 'filter', this.applyFilterState);
+        };
+
+        TodoView.prototype.applyFilterState = function () {
+            var isDone = this.model.toJSON().done;
+            var isRemaining = !isDone;
+            var isHidden = !isDone && app.isDoneFiltered() ? true : !isRemaining && app.isRemainingFiltered() ? true : false;
+
+            this.$el.toggleClass('hidden', isHidden);
         };
 
         TodoView.prototype.render = function () {
             this.$el.html(this.template(this.model.toJSON()));
             this.$el.toggleClass('done', this.model.get('done'));
+            this.applyFilterState();
             this.input = this.$('.edit');
             return this;
         };
