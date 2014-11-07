@@ -54,6 +54,14 @@ class AppView extends Backbone.View<Todo> {
         this.todos.each(this.addOne, this);
     }
 
+    public filterOne(todo: Todo) {
+        todo.trigger('filter');
+    }
+
+    public filterAll() {
+        this.todos.each(this.filterOne, this);
+    }
+
     public createOnEnter(e) {
         if (e.keyCode !== 13)  { return; }
         if (!this.input.val()) { return; }
@@ -72,4 +80,5 @@ class AppView extends Backbone.View<Todo> {
         this.todos.each((todo: Todo) => todo.save({ 'done': done }));
     }
 }
+
 export = AppView;

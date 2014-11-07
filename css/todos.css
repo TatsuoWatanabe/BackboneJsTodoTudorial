@@ -78,6 +78,10 @@ body {
 	border-bottom: none;
 }
 
+#todo-list li.hidden {
+	display: none;
+}
+
 #todo-list li.done label {
 	color: #777777;
 	text-decoration: line-through;

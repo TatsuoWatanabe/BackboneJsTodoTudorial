@@ -8,8 +8,8 @@ class TodoList extends Backbone.Collection<Todo> {
         super(models, options);
     }
 
-    public done() { return this.where({ done: true }); }
-    public remaining() { return <Todo[]>this.without.apply(this, this.done()) }
+    public done()      { return this.where({ done: true }); }
+    public remaining() { return this.where({ done: false }); }
     public nextOrder() { return this.length ? Number(this.last().get('order')) + 1 : 1 }
 }
 
