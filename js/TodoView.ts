@@ -26,8 +26,8 @@ class TodoView extends Backbone.View<Todo> {
     public applyFilterState() {
         var isDone      = this.model.toJSON().done;
         var isRemaining = !isDone;
-        var isHidden    = !isDone      && app.isDoneFiltered()      ? true :
-                          !isRemaining && app.isRemainingFiltered() ? true : false;
+        var isHidden    = app.filter.isDone()      && !isDone      ? true :
+                          app.filter.isRemaining() && !isRemaining ? true : false;
  
         this.$el.toggleClass('hidden', isHidden);
     }

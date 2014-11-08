@@ -4,7 +4,7 @@
     __.prototype = b.prototype;
     d.prototype = new __();
 };
-define(["require", "exports", 'app'], function(require, exports, app) {
+define(["require", "exports", 'app', 'Trace'], function(require, exports, app, Trace) {
     var Router = (function (_super) {
         __extends(Router, _super);
         function Router() {
@@ -15,7 +15,8 @@ define(["require", "exports", 'app'], function(require, exports, app) {
         };
 
         Router.prototype.setFilter = function (param) {
-            app.setFilter(param);
+            Trace.log(param, 'Router: setFilter');
+            app.filter.setState(param);
         };
         return Router;
     })(Backbone.Router);

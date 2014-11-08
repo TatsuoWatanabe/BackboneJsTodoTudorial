@@ -34,6 +34,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="js\app.ts" />
     <TypeScriptCompile Include="js\AppView.ts" />
+    <TypeScriptCompile Include="js\Trace.ts" />
     <TypeScriptCompile Include="js\Router.ts" />
     <TypeScriptCompile Include="js\Todo.ts" />
     <TypeScriptCompile Include="js\TodoList.ts" />
