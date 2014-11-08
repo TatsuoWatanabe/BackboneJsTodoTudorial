@@ -1,4 +1,5 @@
-﻿import app = require('app');
+﻿import app   = require('app');
+import Trace = require('Trace');
 
 class Router extends Backbone.Router {
 
@@ -7,7 +8,8 @@ class Router extends Backbone.Router {
     }
 
     public setFilter(param: string) {
-        app.setFilter(param);
+        Trace.log(param, 'Router: setFilter');
+        app.filter.setState(param);
     }
 }
 

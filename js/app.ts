@@ -1,17 +1,25 @@
 ﻿import AppView = require('AppView');
 import Router  = require('Router');
 
-// --- filter settings --------------------------
-var filters = { remaining: 'remaining', done: 'done' };
-var filter = '';
-export function setFilter(value: string) {
-    filter = value;
-    appView.filterAll();
-}
-export function isRemainingFiltered() { return filter === filters.remaining; }
-export function isDoneFiltered()      { return filter === filters.done; }
-// ----------------------------------------------
+/** app filter module.*/
+export module filter {
+    /** filter difinition of app.*/
+    var states = { remaining: 'remaining', done: 'done' };
+    /** filter state of app. */
+    var state  = '';
 
-var router         = new Router();
-export var appView = new AppView();
+    /** set the filter words to app and apply it.*/
+    export function setState(value: string) {
+        state = value;
+        appView.filterAll();
+    }
+
+    /** return true if app filter state is "remaining".*/
+    export function isRemaining() { return state === states.remaining; }
+    /** return true if app filter state is "done".*/
+    export function isDone()      { return state === states.done; }
+};
+
+var router  = new Router();
+var appView = new AppView();
 Backbone.history.start();
